@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
  
   get '/register', to: 'users#new'
+  get '/update', to: 'users#edit'
 
   resources :users
 end

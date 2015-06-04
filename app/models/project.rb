@@ -1,4 +1,4 @@
 class Project < ActiveRecord::Base
-  has_many :associations
-  has_many :users, through: :associations
+  has_many :assignments
+  has_many :users, through: :assignments
 end

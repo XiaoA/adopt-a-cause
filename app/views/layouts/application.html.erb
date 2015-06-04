@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>AdoptACause</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Adopt-a-Cause</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="navbar-default">
+          <div class="container">
+            <%= render 'layouts/navigation' %>
+          </div>
+        </div>
+      </div>
+    </header>
+    <%= yield %>
 
-<%= yield %>
-
-</body>
+  </body>
 </html>

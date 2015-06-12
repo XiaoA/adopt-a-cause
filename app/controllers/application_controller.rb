@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   helper_method :current_user, :logged_in?
+  helper_method :current_project
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -12,4 +13,7 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
+  def current_project
+    @current_project ||= Project.find(params[:id])
+  end
 end

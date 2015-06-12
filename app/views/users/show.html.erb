@@ -1,4 +1,9 @@
-<%= render 'shared/content_title', title: "Edit Profile" %>
+<%= render 'shared/content_title', title: "#{@user.username}'s User Profile" %>
 
-
-<%= render 'form' %>
+<%= @user.username %> is a member of the following projects:
+<br>
+<% @user.projects.each do |project| %>
+  <ul>
+    <li><%= project.project_name %></li>
+  </ul>
+<% end %>

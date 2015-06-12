@@ -1,0 +1,24 @@
+class AssignmentsController < ApplicationController
+
+  def new
+   @assignment = Assignment.new
+  end
+
+  def create
+    @assignment = Assignment.new(assignment_params)
+    @assignment.user = current_user
+
+    if @assignment.save
+      flash[:notice] = "Great! You've signed up for this project!"
+      redirect_to user_path(@assignment.user.username)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def assignment_params
+    params.require(:assignment).permit()
+  end
+end

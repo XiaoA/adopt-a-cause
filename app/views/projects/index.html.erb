@@ -1,8 +1,9 @@
-<h2>Projects</h2>
+<%= render 'shared/content_title', title: "Available Projects" %>
 
+<div class="container-fluid" id="project-well">
 <% @project.each do |project| %>
-<ul>
-  <li>  <%= project.project_name %> <%= link_to 'volunteer', '/users/:id/projects', method: :put %></li>
-</ul>
+  <ul class="project-list">
+    <li class="well col-md-4 col-md-offset-1"><%= link_to project.project_name %> <br><%= link_to 'Volunteer', {:controller => "project_users", :user_id => current_user.id, :project_id => project.id}, :action => "new", :method => "post", class: "btn btn-primary" %></li>
+  </ul>
 <% end %>
-
+</div>

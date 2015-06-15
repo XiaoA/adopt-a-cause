@@ -25,22 +25,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.projects << @current_project
     if @user.update(user_params)
       flash[:notice] = "Your account profile has been updated."
-      redirect_to user_path(@user)
-    else
-      render :edit
-    end
-  end
-
-  def volunteer
-    current_project = @current_project
-    @user.projects = []
-    @user.projects << current_project
-
-    if @user.save
-      flash[:notice] = "You did it!"
       redirect_to user_path(@user)
     else
       render :edit
@@ -50,9 +36,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    #    params.require(:user).permit(:username, :email, :password, :phone_number)
-    params.require(:user).permit!
+    params.require(:user).permit(:username, :email, :password, :phone_number)
   end
-
 
 end

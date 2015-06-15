@@ -1,34 +1,49 @@
-
-<div class="form-horizontal">
-  <%= form_for @user do |f| %>
-    <div class="form-group">
-      <div class="col-sm-4 col-sm-offset-3 control-label">
-      <%= f.label :username %>
-      <%= f.text_field :username %>
+<div class="container">
+  <div class="row">
+    <%= form_for @user do |f| %>
+      <div class="form-group">
+	<div class="col-md-4 control-label">
+	  <%= f.label :username %>
+	  <%= f.text_field :username %>
+	</div>
       </div>
-      </div>
+  </div>
+  <br>
+  <div class="row">
     <div class="form-group"> 
-      <div class="col-sm-4 col-sm-offset-3 control-label">
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <div class="col-md-4 control-label">
+	<%= f.label :password %>
+	<%= f.password_field :password %>
       </div>
     </div>
+  </div>
+  <br>
+  <div class="row">
     <div class="form-group"> 
-      <div class="col-sm-4 col-sm-offset-3 control-label">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+      <div class="col-md-4 control-label">
+	<%= f.label :email %>
+	<%= f.text_field :email %>
       </div>
     </div>
+  </div>
+  <br>
+  <div class="row">
     <div class="form-group"> 
-      <div class="col-sm-4 col-sm-offset-3 control-label">
-      <%= f.label :phone_number %>
-      (Optional) <%= f.text_field :phone_number %>
+      <div class="col-md-4 control-label">
+	<%= f.label :phone_number %>
+	(Optional) <%= f.text_field :phone_number %>
       </div>
     </div>
+  </div>
+  <br>
+  <div class="row">
     <div class="form-group"> 
-      <div class="col-sm-4 col-sm-offset-3 control-label">
-      <%= f.submit %>
+      <div class="col-md-4 control-label">
+	<%= f.submit %>
       </div>
     </div>
   <% end %>
+  </div>
 </div>
+
+

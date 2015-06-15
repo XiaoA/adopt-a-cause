@@ -9,8 +9,10 @@ Rails.application.routes.draw do
 #  post '/projects/:id/volunteer', to: 'projects#volunteer'
   put '/users/:id/projects', to: 'users#volunteer'
   get '/users/:id/projects', to: 'users#show'
-  
+  post '/project_users/new', to: 'project_users#create'
 
   resources :users
   resources :projects
+  resources :project_users
+  
 end

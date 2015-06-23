@@ -1,7 +1,10 @@
-<h2>Project Assigments</h2>
+<%= render 'shared/content_title', title: "#{@project.project_name}" %>
 
-<% @project.each do |project| %>
-<ul>
-  <li>  <%= project.username %></li>
-</ul>
-<% end %>
+<table class= "table table-hover responsive-table">
+	<tr><td><strong>Description:</strong></td> <td><%= @project.project_description %></td></tr>
+	<tr><td><strong>Contact:</strong></td> <td><a href="#"><%= @project.project_contact_person %></a></td></tr>
+	<tr><td><strong>Begin Date:</strong></td> <td><%= @project.begin_date %></td></tr>
+	<tr><td><strong>End Date:</strong></td> <td><%= @project.end_date %></td></tr>
+</table>
+
+

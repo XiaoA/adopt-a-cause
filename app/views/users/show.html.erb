@@ -4,9 +4,9 @@
   <div class="row">
     <div class="col-md-4 col-md-offset-1">
       <% @user.projects.each do |project| %>
-	<ul>
-	  <li><%= project.project_name %></li>
-	</ul>
+				<ul>
+					<li class="project-list"><%= project.project_name %> <%= link_to "Info", projects_path, class: "btn btn-info" %></li>
+				</ul>
       <% end %>
     </div>
   </div>

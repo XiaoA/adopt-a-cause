@@ -2,27 +2,18 @@
   <div class="row">
     <%= form_for @user do |f| %>
       <div class="form-group">
-	<div class="col-md-4 control-label">
-	  <%= f.label :username %>
-	  <%= f.text_field :username %>
-	</div>
+				<div class="col-md-4 control-label">
+					<%= f.label :username %>
+					<%= f.text_field :username %>
+				</div>
       </div>
   </div>
   <br>
   <div class="row">
     <div class="form-group"> 
       <div class="col-md-4 control-label">
-	<%= f.label :password %>
-	<%= f.password_field :password %>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="form-group"> 
-      <div class="col-md-4 control-label">
-	<%= f.label :email %>
-	<%= f.text_field :email %>
+				<%= f.label :password %>
+				<%= f.password_field :password %>
       </div>
     </div>
   </div>
@@ -30,8 +21,8 @@
   <div class="row">
     <div class="form-group"> 
       <div class="col-md-4 control-label">
-	<%= f.label :phone_number %>
-	(Optional) <%= f.text_field :phone_number %>
+				<%= f.label :email %>
+				<%= f.text_field :email %>
       </div>
     </div>
   </div>
@@ -39,7 +30,16 @@
   <div class="row">
     <div class="form-group"> 
       <div class="col-md-4 control-label">
-	<%= f.submit %>
+				<%= f.label :phone_number %>
+				(Optional) <%= f.text_field :phone_number %>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="form-group"> 
+      <div class="col-md-4 control-label">
+				<%= f.submit %>
       </div>
     </div>
   <% end %>

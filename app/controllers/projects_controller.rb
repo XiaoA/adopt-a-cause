@@ -14,7 +14,6 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    @project_user = current_user
 
     if @project.save
       flash[:notice] = "Your project has been created."
@@ -28,7 +27,7 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:project_name, :project_description, :project_contact_person, :begin_date, :end_date)
+    params.require(:project).permit(:project_name, :project_id, :project_description, :project_contact_person, :begin_date, :end_date, )
   end
   
 end

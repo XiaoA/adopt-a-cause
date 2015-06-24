@@ -6,13 +6,13 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
   get '/users/:id/projects', to: 'users#show'
-  post '/project_users', to: 'project_users#create'
   post 'project_users/new', to: 'project_users#create'
 
 
   resources :users
   resources :projects
   resources :project_users
+
 
   
 end

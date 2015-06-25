@@ -1,11 +1,11 @@
 <%= render 'shared/content_title', title: "#{@user.username}'s Projects" %>
 
-<div class="container-fluid">
+<div class="container well">
   <div class="row">
-    <div class="col-md-4 col-md-offset-1">
+    <div class="col-md-6 col-md-offset-1">
       <% @user.projects.each do |project| %>
 				<ul>
-					<li class="project-list"><%= project.project_name %> <%= link_to "Info", project_path(project), class: "btn btn-info" %></li>
+					<li class="project-list"><%= link_to project.project_name, project_path(project) %> 
 				</ul>
       <% end %>
     </div>

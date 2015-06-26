@@ -1,14 +1,20 @@
 <%= render 'shared/content_title', title: "#{@user.username}'s Projects" %>
 
-
 <div class="container well">
   <div class="row">
-    <div class="col-md-6 col-md-offset-1">
-      <% @user.projects.each do |project| %>
-				<ul>
-					<li class="project-list"><%= link_to project.project_name, project_path(project) %> 
-				</ul>
-      <% end %>
-    </div>
+
+		<% if @user.projects.empty? %>
+			<div class="col-md-8 col-md-offset-2">
+				<span class="lead">You don't have any active projects. Would you like to <%= link_to projects_path do %> volunteer?</span><% end %>
+			</div>
+		<% else %>
+			<div class="col-md-6 col-md-offset-1">
+				<% @user.projects.each do |project| %>
+					<ul>
+						<li class="project-list"><%= link_to project.project_name, project_path(project) %> 
+					</ul>
+				<% end %>
+		<% end %>
+		</div>
   </div>
 </div>

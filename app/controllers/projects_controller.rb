@@ -19,6 +19,7 @@ class ProjectsController < ApplicationController
       flash[:notice] = "Your project has been created."
       redirect_to projects_path
     else
+      flash[:error] = "There was a problem saving your project."
       render :new
     end
   end
@@ -27,7 +28,7 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:project_name, :project_id, :project_description, :project_contact_person, :begin_date, :end_date, )
+    params.require(:project).permit(:project_name, :project_id, :project_description, :project_contact_person, :begin_date, :end_date)
   end
   
 end

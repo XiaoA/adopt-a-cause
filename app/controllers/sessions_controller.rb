@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "Welcome, you've logged in."
       redirect_to projects_path
     else
-      flash[:warning] = "There is something wrong with your username or password."
+      flash.now[:warning] = "There is something wrong with your username or password."
       redirect_to login_path
     end
   end

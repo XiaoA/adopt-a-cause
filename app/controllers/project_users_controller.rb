@@ -23,7 +23,7 @@ class ProjectUsersController < ApplicationController
     #      redirect_to project_user_path(@project_user)
       redirect_to user_path(current_user)
     else
-      flash[:error] = "Sorry, you've already volunteered for that project."
+      flash[:warning] = "Sorry, you've already volunteered for that project."
       redirect_to user_path(current_user)
     end
   end

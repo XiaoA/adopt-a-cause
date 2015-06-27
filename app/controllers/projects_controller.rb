@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
       flash[:notice] = "Your project has been created."
       redirect_to projects_path
     else
-      flash[:error] = "There was a problem saving your project."
+      flash[:warning] = "There was a problem saving your project."
       render :new
     end
   end

@@ -13,14 +13,13 @@ class ProjectUsersController < ApplicationController
   end
 
   def create
-    @project_user = ProjectUser.new(project_user_params)
+    @project_user = ProjectUser.new
     @user_id = params[:user_id]
     @project_id = params[:project_id]
     
     
     if @project_user.save
       flash[:notice] = "Congratulations. You've volunteered for a new project."
-    #      redirect_to project_user_path(@project_user)
       redirect_to user_path(current_user)
     else
       flash[:error] = "Sorry, you've already volunteered for that project."
@@ -32,7 +31,7 @@ class ProjectUsersController < ApplicationController
   end
   
   def update
-    if @project_user.update(project_user_params)
+    if @project_user.update
       flash[:notice] = "Your account profile has been updated."
       redirect_to user_path(current_user)
     else
@@ -41,12 +40,6 @@ class ProjectUsersController < ApplicationController
   end
 
   def edit
-  end
-
-  private
-
-  def project_user_params
-    params.permit(:project_user_id, :project_id, :user_id)
   end
 
 end

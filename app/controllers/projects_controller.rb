@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
 
     if @project.save
-      flash.now[:notice] = "Your project has been created."
+      flash[:notice] = "Your project has been created."
       redirect_to projects_path
     else
       flash.now[:error] = "There was a problem saving your project."

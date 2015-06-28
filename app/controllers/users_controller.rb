@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      flash.now[:notice] = "Congratulations. You've created a new account."
+      flash[:notice] = "Congratulations. You've created a new account."
       redirect_to root_path
     else
       flash.now[:error] = "There's something wrong with your username or password."

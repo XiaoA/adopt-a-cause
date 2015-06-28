@@ -18,10 +18,10 @@ class ProjectUsersController < ApplicationController
     
     
     if @project_user.save
-      flash.now[:notice] = "Congratulations. You've volunteered for a new project."
+      flash[:notice] = "Congratulations. You've volunteered for a new project."
       redirect_to user_path(current_user)
     else
-      flash.now[:error] = "Sorry, you've already volunteered for that project."
+      flash[:error] = "Sorry, you've already volunteered for that project."
       redirect_to user_path(current_user)
     end
   end

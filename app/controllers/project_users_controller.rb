@@ -9,7 +9,6 @@ class ProjectUsersController < ApplicationController
   end
 
   def new
-    @project_user = ProjectUser.new
   end
 
   def create
@@ -19,10 +18,10 @@ class ProjectUsersController < ApplicationController
     
     
     if @project_user.save
-      flash[:notice] = "Congratulations. You've volunteered for a new project."
+      flash.now[:notice] = "Congratulations. You've volunteered for a new project."
       redirect_to user_path(current_user)
     else
-      flash[:error] = "Sorry, you've already volunteered for that project."
+      flash.now[:error] = "Sorry, you've already volunteered for that project."
       redirect_to user_path(current_user)
     end
   end

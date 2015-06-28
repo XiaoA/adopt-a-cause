@@ -20,6 +20,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Congratulations. You've created a new account."
       redirect_to root_path
     else
+      flash.now[:warning] = "There's something wrong with your username or password. Passwords must be at least six charcters long."
       render :new
     end
   end
